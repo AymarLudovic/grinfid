@@ -336,7 +336,7 @@ html += '<link rel="stylesheet" href="/css/home.css">';
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  const promise = account.createEmailSession(email, password);
+  const promise = account.createEmailPasswordSession(email, password);
 
   promise.then(function (response) {
     globalSession = response; // Stockez la session dans la variable globale
